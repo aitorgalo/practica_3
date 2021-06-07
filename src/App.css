@@ -2,13 +2,9 @@
 {
 	width : 1219px ;
 	height: 855px ;
-	background-color:green;
+	background-color:blue;
 	background-image: url("pokedex.png");
-	position:absolute;
-	margin-top:20px;
-	
-	
-	
+	position:relative;
 }
 
 ul{
@@ -22,6 +18,7 @@ ul{
 	margin-top:645px;
 	list-style-type: none;
 	padding: 0;
+	position:absolute;
 	
 }
 
@@ -29,15 +26,24 @@ li {
   margin: 10px;
 }
 
-.artworkContainer
+.artwork
 {
-height: 110px;
-	width: 200px;
-	background-color:yellow;
-    border-radius: 10px;
-	margin-left:0;
-	margin-top:0;
-	list-style-type: none;
-	padding: 0;
-	
+	position:absolute;
+	margin-left:70px;
+	height: 450px;
+	margin-top: 180px;
+}
+
+.front
+{
+	position:absolute;
+	margin-left: 930px;
+	margin-top: 655px;
+}
+
+.back
+{
+	position:absolute;
+	margin-left: 1020px;
+	margin-top: 655px;
 }

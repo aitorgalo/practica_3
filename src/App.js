@@ -25,8 +25,10 @@ import './App.css';
 <ul>
  {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
  </ul>
- 
- <img className="artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" />
+
+ <img className="artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" />
+ <img className="front" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" />
+ <img className="back" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png" />
  
 </div>
 
