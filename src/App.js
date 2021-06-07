@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link , NavLink } from "react-router-dom";
 import axios from 'axios';
 import './App.css';
 
@@ -17,12 +17,9 @@ import './App.css';
   
  }, []);
  
- 
  return (
 <Router>
 <Route path="/" exact component={ () => ( 
-
-
 
 <div className="pokedexLayout">
 <ul>
@@ -34,9 +31,6 @@ import './App.css';
  <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
  
 </div>
-
-
-
 
  ) } />
 
@@ -46,7 +40,7 @@ import './App.css';
 
 <div className="pokedexLayout">
 <ul>
- {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
+ {  pokemonArray.results.map(item => ( <li key={item.name}>  <NavLink activeStyle={{backgroundColor:'green'}} to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</NavLink>              </li> ))   }
  </ul>
 
  <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
@@ -55,13 +49,7 @@ import './App.css';
  
 </div>
 
-
-
-
  ) } /> 
-
-
-
 
 </Router>
 );
