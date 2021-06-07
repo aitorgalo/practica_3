@@ -5,6 +5,7 @@ import './App.css';
 
 export default function App() {
     const [pokemonArray, setPokemons] = useState({ results: [] });
+    const [currentPokemon, setCurrentPokemon] = useState({ results:[]});
 
 
     useEffect(() => {
