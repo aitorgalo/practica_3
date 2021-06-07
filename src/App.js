@@ -7,7 +7,7 @@ import axios from 'axios';
  
  useEffect( () => {
  const fetchData = async () => {
- const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=151');
+ const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=10');
  setData(result.data);
  };
  
