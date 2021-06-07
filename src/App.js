@@ -21,10 +21,13 @@ import './App.css';
  return (
 <Router>
 <Route path="/" exact component={ () => ( 
-<div className="pokedex_layout">
+<div className="pokedexLayout">
 <ul>
  {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
  </ul>
+ 
+ <img className="artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" />
+ 
 </div>
 
  ) } />
