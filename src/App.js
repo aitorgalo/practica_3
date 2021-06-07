@@ -1,40 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
 import './App.css';
 
  export default function App() {
- const [data, setData] = useState({ results: [] });
+ const [pokemonArray, setPokemons] = useState({ results: [] });
  
  
  useEffect( () => {
- const fetchData = async () => {
+ const fetchPokemonList = async () => {
  const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=25');
- setData(result.data);
+ setPokemons(result.data);
  };
  
- fetchData();
+ fetchPokemonList();
  
  }, []);
  
  
  return (
 <Router>
-
-
 <Route path="/" exact component={ () => ( 
-
-<>
-
 <div className="pokedex_layout">
-
 <ul>
- {  data.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name}</Link>              </li> ))   }
+ {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
  </ul>
-
 </div>
-
-</>
 
  ) } />
 
@@ -51,11 +42,8 @@ return (  <div>
 <h1>Pokemons</h1>
 <ul>
 <li key={123}>
-<Link to
-="/pokemons/guitar"
->Guitar</Link
-> </li
->
+<Link to="/pokemons/guitar"
+>Guitar</Link> </li>
 <li key={345}>
 <Link to="/pokemons/violin">Violin</Link> </li></ul>
 
