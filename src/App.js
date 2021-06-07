@@ -26,9 +26,9 @@ import './App.css';
  {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
  </ul>
 
- <img className="artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" />
- <img className="front" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" />
- <img className="back" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png" />
+ <img className="artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
+ <img className="front" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
+ <img className="back" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
  
 </div>
 
@@ -40,6 +40,9 @@ import './App.css';
 );
    
  }
+ 
+ 
+ /*
  
  function Pokemons()
 {
@@ -57,3 +60,6 @@ return (  <div>
 }
 
 const Pokemon = ({match}) => <div> This is a nice {match.params.pokemonName} </div>;
+
+
+*/
