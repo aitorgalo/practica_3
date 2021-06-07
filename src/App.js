@@ -14,27 +14,54 @@ import './App.css';
  };
  
  fetchPokemonList();
- 
+  
  }, []);
  
  
  return (
 <Router>
 <Route path="/" exact component={ () => ( 
+
+
+
 <div className="pokedexLayout">
 <ul>
- {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
+ {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
  </ul>
 
- <img className="artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
- <img className="front" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
- <img className="back" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
+ <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
+ <img className="front" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
+ <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
  
 </div>
 
+
+
+
  ) } />
 
-<Route path ="/pokemons" component ={Pokemons} />
+<Route path ="/pokemon" component ={ () => ( 
+
+
+
+<div className="pokedexLayout">
+<ul>
+ {  pokemonArray.results.map(item => ( <li key={item.name}>  <Link to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</Link>              </li> ))   }
+ </ul>
+
+ <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
+ <img className="front" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
+ <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
+ 
+</div>
+
+
+
+
+ ) } /> 
+
+
+
 
 </Router>
 );
@@ -42,24 +69,7 @@ import './App.css';
  }
  
  
- /*
  
- function Pokemons()
-{
-return (  <div>
-<h1>Pokemons</h1>
-<ul>
-<li key={123}>
-<Link to="/pokemons/guitar"
->Guitar</Link> </li>
-<li key={345}>
-<Link to="/pokemons/violin">Violin</Link> </li></ul>
-
-<Route path="/pokemons/:pokemonName" component={Pokemon} /> </div>  );
-
-}
-
-const Pokemon = ({match}) => <div> This is a nice {match.params.pokemonName} </div>;
 
 
-*/
+
