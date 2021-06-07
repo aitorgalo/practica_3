@@ -4,13 +4,21 @@
 	height: 855px ;
 	background-color:green;
 	background-image: url("pokedex.png");
-	margin:0 0 0 0 ;
+	position:absolute;
+	margin-top:20px;
 }
 
 ul{
 	
-	height: 150px;
-	width: 150px;
+	height: 110px;
+	width: 200px;
 	background-color:yellow;
+	overflow:hidden; overflow-y:scroll;
+    border-radius: 10px;
+	margin-left:705px;
+	margin-top:645px;
+	list-style-type: none;
+	padding: 0;
+	
 	
 }
