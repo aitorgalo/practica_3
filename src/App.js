@@ -29,7 +29,7 @@ import './App.css';
 <div className="pokedex_layout">
 
 <ul>
- {  data.results.map(item => ( <li key={item.name}> <a href={item.url}>{item.name}</a> </li> ))   }
+ {  data.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name}</Link>              </li> ))   }
  </ul>
 
 
