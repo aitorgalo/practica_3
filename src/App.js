@@ -32,8 +32,6 @@ import './App.css';
  {  data.results.map(item => ( <li key={item.name}>  <Link to={"/pokemons/" + item.name}>{item.name}</Link>              </li> ))   }
  </ul>
 
-
-
 </div>
 
 </>
