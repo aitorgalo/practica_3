@@ -36,8 +36,6 @@ import './App.css';
 
 <Route path ="/pokemon" component ={ () => ( 
 
-
-
 <div className="pokedexLayout">
 <ul>
  {  pokemonArray.results.map(item => ( <li key={item.name}>  <NavLink activeStyle={{backgroundColor:'green'}} to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</NavLink>              </li> ))   }
