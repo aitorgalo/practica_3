@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, useLocation } from "react-router-dom";
 import axios from 'axios';
+import './App.css';
 
  export default function App() {
  const [data, setData] = useState({ results: [] });
@@ -25,11 +26,15 @@ import axios from 'axios';
 
 <>
 
+<div className="pokedex_layout">
+
 <ul>
  {  data.results.map(item => ( <li key={item.name}> <a href={item.url}>{item.name}</a> </li> ))   }
  </ul>
 
 
+
+</div>
 
 </>
 
