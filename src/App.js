@@ -23,10 +23,15 @@ import axios from 'axios';
 
 <Route path="/" exact component={ () => ( 
 
+<>
+
 <ul>
  {  data.results.map(item => ( <li key={item.name}> <a href={item.url}>{item.name}</a> </li> ))   }
  </ul>
 
+
+
+</>
 
  ) } />
 
