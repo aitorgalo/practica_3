@@ -20,8 +20,8 @@ export default function App() {
 
     return (
         <Router>
+      
             <Route path="/" exact component={() => (
-
                 <div className="pokedexLayout">
                     <ul>
                         {pokemonArray.results.map(item => (<li key={item.name}>  <NavLink to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</NavLink>              </li>))}
@@ -35,24 +35,30 @@ export default function App() {
 
             )} />
 
-            <Route path="/pokemon/:pokemonName" component={() => (
-
-                <div className="pokedexLayout">
-                    <ul>
-                        {pokemonArray.results.map(item => (<li key={item.name}>  <NavLink activeStyle={{ backgroundColor: 'green' }} to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</NavLink>              </li>))}
-                    </ul>
-
-                    <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
-                    <img className="front" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
-                    <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
-
-                </div>
-
-            )} />
+            <Route path="/pokemon/:pokemonName" component={Pokemon(pokemonArray)} />
 
         </Router>
     );
 
+}
+
+function Pokemon(pokemonArray)
+{
+    return(
+        () => (
+
+            <div className="pokedexLayout">
+                <ul>
+                    {pokemonArray.results.map(item => (<li key={item.name}>  <NavLink activeStyle={{ backgroundColor: 'green' }} to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</NavLink>              </li>))}
+                </ul>
+
+                <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
+                <img className="front" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
+                <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
+
+            </div>
+        )
+    );
 }
 
 
