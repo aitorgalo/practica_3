@@ -1,49 +1,44 @@
-.pokedexLayout
-{
-	width : 1219px ;
-	height: 855px ;
-	background-color:blue;
-	background-image: url("pokedex.png");
-	position:relative;
+.pokedexLayout {
+  width: 1219px;
+  height: 855px;
+  background-color: blue;
+  background-image: url("pokedex.png");
+  position: relative;
 }
 
-ul{
-	
-	height: 110px;
-	width: 200px;
-	background-color:yellow;
-	overflow:hidden; overflow-y:scroll;
-    border-radius: 10px;
-	margin-left:705px;
-	margin-top:645px;
-	list-style-type: none;
-	padding: 0;
-	position:absolute;
-	
+ul {
+  height: 110px;
+  width: 200px;
+  background-color: yellow;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 10px;
+  margin-left: 705px;
+  margin-top: 645px;
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
 }
 
 li {
   margin: 10px;
 }
 
-.artwork
-{
-	position:absolute;
-	margin-left:70px;
-	height: 450px;
-	margin-top: 180px;
+.artwork {
+  position: absolute;
+  margin-left: 70px;
+  height: 450px;
+  margin-top: 180px;
 }
 
-.front
-{
-	position:absolute;
-	margin-left: 930px;
-	margin-top: 655px;
+.front {
+  position: absolute;
+  margin-left: 930px;
+  margin-top: 655px;
 }
 
-.back
-{
-	position:absolute;
-	margin-left: 1020px;
-	margin-top: 655px;
+.back {
+  position: absolute;
+  margin-left: 1020px;
+  margin-top: 655px;
 }
