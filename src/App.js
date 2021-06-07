@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, NavLink, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, useParams } from "react-router-dom";
 import axios from 'axios';
 import './App.css';
 
 export default function App() {
     const [pokemonArray, setPokemons] = useState({ results: [] });
     const [currentPokemon, setCurrentPokemon] = useState({ results:[]});
-
+   // const { pokemonName } = useParams();
 
     useEffect(() => {
         const fetchPokemonList = async () => {
@@ -54,11 +54,3 @@ export default function App() {
     );
 
 }
-
-
-
-
-
-
-
-
