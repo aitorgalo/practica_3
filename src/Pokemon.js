@@ -4,36 +4,41 @@ import axios from 'axios';
 
 const Pokemon = () => {
 
-    const [currentPokemon, setCurrentPokemon] = useState({ sprites : "" });
+    const [currentPokemon, setCurrentPokemon] = useState({
+        artwork: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+        front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+        back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
+    });
     const location = useLocation();
-    
+
     useEffect(() => {
 
         const fetchPokemonInfo = async () => {
             const result = await axios("https://pokeapi.co/api/v2" + location.pathname);
-            setCurrentPokemon(result.data);
-            console.log(result.data);
+
+            setCurrentPokemon({
+                artwork: result.data.sprites.other.dream_world.front_default,
+                front: result.data.sprites.front_default,
+                back: result.data.sprites.back_default
+
+            });
         };
 
         fetchPokemonInfo();
 
-    },[location.pathname]);
+    }, [location.pathname]);
 
-    const { sprites } = currentPokemon;
- //   console.log(sprites.other.dream_world);
+    return (
 
-    return(
-        
         <div className="pokedexLayout">
 
-                    <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
-                    <img className="front" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
-                    <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
+            <img className="artwork" alt="" src={currentPokemon.artwork} />
+            <img className="front" alt="" src={currentPokemon.front} />
+            <img className="back" alt="" src={currentPokemon.back} />
 
         </div>
 
     );
-
 
 }
 
