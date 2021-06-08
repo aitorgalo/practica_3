@@ -2,5 +2,5 @@ body {
   max-width: 1080px;
   margin: 0 auto;
   float: none;
-  background-color: green;
+  background-image:url("background.jpg")
 }
