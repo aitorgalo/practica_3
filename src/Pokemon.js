@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const Pokemon = () => {
 
-    const [currentPokemon, setCurrentPokemon] = useState([]);
+    const [currentPokemon, setCurrentPokemon] = useState({ sprites : "" });
     const location = useLocation();
     
     useEffect(() => {
@@ -19,12 +19,14 @@ const Pokemon = () => {
 
     },[location.pathname]);
 
+    const { sprites } = currentPokemon;
+ //   console.log(sprites.other.dream_world);
 
     return(
         
         <div className="pokedexLayout">
 
-<img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
+                    <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
                     <img className="front" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
                     <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
 
