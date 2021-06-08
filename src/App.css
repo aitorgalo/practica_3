@@ -1,7 +1,6 @@
 .pokedexLayout {
   width: 1219px;
   height: 855px;
-  background-color: blue;
   background-image: url("pokedex.png");
   position: relative;
 }

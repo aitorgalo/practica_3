@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import PokemonList from "./PokemonList";
 
 const Pokemon = () => {
 
@@ -14,8 +15,10 @@ const Pokemon = () => {
     useEffect(() => {
 
         const fetchPokemonInfo = async () => {
-            const result = await axios("https://pokeapi.co/api/v2" + location.pathname);
 
+            // Get Pokemon
+            const result = await axios("https://pokeapi.co/api/v2" + location.pathname);
+            if( typeof result.data.sprites !== 'undefined')
             setCurrentPokemon({
                 artwork: result.data.sprites.other.dream_world.front_default,
                 front: result.data.sprites.front_default,
@@ -33,6 +36,9 @@ const Pokemon = () => {
             <img className="artwork" alt="" src={currentPokemon.artwork} />
             <img className="front" alt="" src={currentPokemon.front} />
             <img className="back" alt="" src={currentPokemon.back} />
+
+            <PokemonList />
+
         </div>
     );
 

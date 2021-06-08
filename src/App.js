@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Pokemon from "./Pokemon";
-import PokemonList from "./PokemonList";
+
 import "./App.css";
 
 export default function App() {
@@ -8,13 +8,11 @@ export default function App() {
 
     <Router>
       <Route path="/" exact>
-        <PokemonList />
+        <Pokemon />
       </Route>
       <Route path="/pokemon/:pokemonName">
         <Pokemon />
-        <PokemonList />
       </Route>
-
     </Router>
   );
 }
