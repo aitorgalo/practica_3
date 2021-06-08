@@ -29,15 +29,11 @@ const Pokemon = () => {
     }, [location.pathname]);
 
     return (
-
         <div className="pokedexLayout">
-
             <img className="artwork" alt="" src={currentPokemon.artwork} />
             <img className="front" alt="" src={currentPokemon.front} />
             <img className="back" alt="" src={currentPokemon.back} />
-
         </div>
-
     );
 
 }

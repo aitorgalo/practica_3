@@ -1,43 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios';
-import Pokemon from './Pokemon';
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Pokemon from "./Pokemon";
+import PokemonList from "./PokemonList";
+import "./App.css";
 
 export default function App() {
-    const [pokemonArray, setPokemons] = useState({ results: [] });
-   // const { pokemonName } = useParams();
+  return (
 
-    useEffect(() => {
-        const fetchPokemonList = async () => {
-            const result = await axios('https://pokeapi.co/api/v2/pokemon?limit=25');
-            setPokemons(result.data);
-        };
+    <Router>
+      <Route path="/" exact>
+        <PokemonList />
+      </Route>
+      <Route path="/pokemon/:pokemonName">
+        <Pokemon />
+        <PokemonList />
+      </Route>
 
-        fetchPokemonList();
-
-    }, []);
-
-    return (
-        <Router>
-      
-            <Route path="/" exact component={() => (
-                <div className="pokedexLayout">
-                    <ul>
-                        {pokemonArray.results.map(item => (<li key={item.name}>  <NavLink to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</NavLink>              </li>))}
-                    </ul>
-
-                    <img className="artwork" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
-                    <img className="front" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" />
-                    <img className="back" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png" />
-
-                </div>
-
-            )} />
-
-            <Route path="/pokemon/:pokemonName" component={Pokemon} />
-
-        </Router>
-    );
-
+    </Router>
+  );
 }
