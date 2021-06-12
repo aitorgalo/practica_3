@@ -1,7 +1,7 @@
 body {
-  max-width: 1080px;
-  margin: 0 auto;
-  float: none;
+display: flex;
+    justify-content: center;
+    align-items: center;
 
   animation-name: background-loop;
   animation-timing-function: linear;
