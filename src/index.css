@@ -1,8 +1,9 @@
 body {
 display: flex;
-    justify-content: center;
-    align-items: center;
-
+justify-content: center;
+ align-items: center;
+  min-height: 95vh;
+  
   animation-name: background-loop;
   animation-timing-function: linear;
   animation-duration: 15s;
@@ -10,7 +11,7 @@ display: flex;
   animation-direction: alternate;
 
   cursor: url(cursor.png),auto;
-
+  
 }
 
 @keyframes background-loop {
