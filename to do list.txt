@@ -1,0 +1,1 @@
+cambiar a fetch las peticiones

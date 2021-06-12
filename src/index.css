@@ -2,5 +2,20 @@ body {
   max-width: 1080px;
   margin: 0 auto;
   float: none;
-  background-image:url("background.jpg")
+
+
+  animation-name: background-loop;
+  animation-timing-function: linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes background-loop {
+  0%   {background-image:url("background-1.jpg")}
+  20%  {background-image:url("background-2.png")}
+  40%  {background-image:url("background-3.png")}
+  60% {background-image:url("background-4.png")}
+  80% {background-image:url("background-5.png")}
+  100% {background-image:url("background-1.jpg")}
 }

@@ -25,9 +25,21 @@ li {
 
 .artwork {
   position: absolute;
-  margin-left: 70px;
+  margin-left: 20px;
   height: 450px;
   margin-top: 180px;
+
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+
+/* Ejemplo https://www.w3schools.com/css/css3_animations.asp */
+@keyframes animation {
+  0%   {left:0px;}
+  50%  {left:60px;}
+  100% {left:0px}
 }
 
 .front {
