@@ -3,19 +3,23 @@ body {
   margin: 0 auto;
   float: none;
 
-
   animation-name: background-loop;
   animation-timing-function: linear;
-  animation-duration: 10s;
+  animation-duration: 15s;
   animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  cursor: url(cursor.png),auto;
 
 }
 
 @keyframes background-loop {
   0%   {background-image:url("background-1.jpg")}
-  20%  {background-image:url("background-2.png")}
-  40%  {background-image:url("background-3.png")}
-  60% {background-image:url("background-4.png")}
-  80% {background-image:url("background-5.png")}
-  100% {background-image:url("background-1.jpg")}
+  15%  {background-image:url("background-1.jpg")}
+  30%   {background-image:url("background-2.png")}
+  45%  {background-image:url("background-2.png")}
+  60%   {background-image:url("background-3.png")}
+  75%  {background-image:url("background-3.png")}
+  90%   {background-image:url("background-1.jpg")}
+  100%   {background-image:url("background-1.jpg")}
 }

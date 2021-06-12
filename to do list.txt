@@ -1,1 +1,10 @@
 cambiar a fetch las peticiones
+pagina inicial
+icono cargando
+descripción pokemon
+nombre pokemon
+número pokemon
+mejorar estilo
+
+extra
+algúna animación más
