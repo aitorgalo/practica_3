@@ -45,11 +45,11 @@ const Pokemon = () => {
             location.pathname.replace("/pokemon", "/pokemon-species")
         )
           .then((response) => response.json())
-          .then((json) =>
+          .then((json) =>  
             //   setCurrentPokemon( ...currentPokemon)
-            //console.log(json)
-console.log(json)
-       //     setCurrentPokemon(currentPokemon)
+            console.log(json)
+//console.log(json)
+         // setCurrentPokemon(currentPokemon)
           )
           .catch((err) => console.log("Error:" + err));
     };
