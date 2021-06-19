@@ -1,7 +1,6 @@
 cambiar a fetch las peticiones
 pagina inicial
-icono cargando
 descripción pokemon
 nombre pokemon
 número pokemon
-mejorar estilo
+mejorar estilo 
