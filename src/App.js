@@ -5,7 +5,6 @@ import "./css/App.css";
 
 export default function App() {
   return (
-
     <Router>
       <Route path="/" exact>
         <Pokemon />

@@ -24,18 +24,21 @@ ul {
 }
 
 /* Ejemplo https://www.w3schools.com/css/css3_animations.asp */
-@keyframes selectable_background
-{
-  from {background-color: red;}
-  to {background-color: yellow;}
+@keyframes selectable_background {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
 }
 
 li {
   margin: 10px;
 }
 
-a{
-  cursor: url("../img/cursor_invert.png"),auto;
+a {
+  cursor: url("../img/cursor_invert.png"), auto;
 }
 
 .artwork {
@@ -47,14 +50,19 @@ a{
   animation-name: animation_artwork;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-
 }
 
 /* Ejemplo https://www.w3schools.com/css/css3_animations.asp */
 @keyframes animation_artwork {
-  0%   {left:0px;}
-  50%  {left:60px;}
-  100% {left:0px}
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: 60px;
+  }
+  100% {
+    left: 0px;
+  }
 }
 
 .front {
@@ -81,7 +89,13 @@ a{
 
 /* Ejemplo https://www.w3schools.com/css/css3_animations.asp */
 @keyframes animation_sprite {
-  0%   {top:0px;}
-  50%  {top:-5px;}
-  100% {top:0px}
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top: 0px;
+  }
 }
