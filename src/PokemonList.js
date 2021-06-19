@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
+
 const PokemonList = () => {
 
     const [pokemonArray, setPokemons] = useState({ results: [] });
@@ -16,9 +17,11 @@ const PokemonList = () => {
     }, []);
 
     return (
+
         <ul>
-            {pokemonArray.results.map(item => (  <NavLink activeStyle={{ backgroundColor: 'green' }} to={"/pokemon/" + item.name}> <li key={item.name}> {item.name.toUpperCase()} </li> </NavLink>              ))}
+            {pokemonArray.results.map(item => (<li key={item.name}>  <NavLink activeStyle={{ backgroundColor: 'green' }} to={"/pokemon/" + item.name}>{item.name.toUpperCase()}</NavLink>              </li>))}
         </ul>
+
     );
 
 }
