@@ -48,8 +48,8 @@ const Pokemon = () => {
           .then((json) =>
             //   setCurrentPokemon( ...currentPokemon)
             //console.log(json)
-
-            setCurrentPokemon(currentPokemon)
+console.log(json)
+       //     setCurrentPokemon(currentPokemon)
           )
           .catch((err) => console.log("Error:" + err));
     };
