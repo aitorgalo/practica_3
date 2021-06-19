@@ -1,35 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import axios from 'axios';
 import PokemonList from "./PokemonList";
 
 const Pokemon = () => {
 
+    // Default values for index
     const [currentPokemon, setCurrentPokemon] = useState({
         artwork: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
         front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
         back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png"
     });
+
+    // Current Location
     const location = useLocation();
 
+    // Change Location = Change Pokemon
     useEffect(() => {
 
+        // Get Pokemon Selected Info Function
         const fetchPokemonInfo = async () => {
 
             // Get Pokemon
-            const result = await axios("https://pokeapi.co/api/v2" + location.pathname);
-            if( typeof result.data.sprites !== 'undefined')
+            if(location.pathname !== "/")
+            await fetch("https://pokeapi.co/api/v2" + location.pathname).then((response) => response.json()).then(json => 
+         
+            // Set Pokemon
             setCurrentPokemon({
-                artwork: result.data.sprites.other.dream_world.front_default,
-                front: result.data.sprites.front_default,
-                back: result.data.sprites.back_default
-            });
+                artwork: json.sprites.other.dream_world.front_default,
+                front: json.sprites.front_default,
+                back: json.sprites.back_default
+            })
+
+            ).catch(err => console.log("El Pokemon no existe"));
         };
 
+        // Get Selected Pokemon
         fetchPokemonInfo();
 
     }, [location.pathname]);
 
+    // Return Images
     return (
         <div className="pokedexLayout">
             <img className="artwork" alt="" src={currentPokemon.artwork} />
