@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Pokemon from "./Pokemon";
 
-import "./App.css";
+import "./css/App.css";
 
 export default function App() {
   return (

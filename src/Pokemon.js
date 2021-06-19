@@ -6,9 +6,9 @@ import PokemonList from "./PokemonList";
 const Pokemon = () => {
 
     const [currentPokemon, setCurrentPokemon] = useState({
-        artwork: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-        front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-        back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
+        artwork: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+        front: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+        back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png"
     });
     const location = useLocation();
 
@@ -23,7 +23,6 @@ const Pokemon = () => {
                 artwork: result.data.sprites.other.dream_world.front_default,
                 front: result.data.sprites.front_default,
                 back: result.data.sprites.back_default
-
             });
         };
 
@@ -36,9 +35,7 @@ const Pokemon = () => {
             <img className="artwork" alt="" src={currentPokemon.artwork} />
             <img className="front" alt="" src={currentPokemon.front} />
             <img className="back" alt="" src={currentPokemon.back} />
-
             <PokemonList />
-
         </div>
     );
 

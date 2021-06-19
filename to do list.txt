@@ -5,6 +5,3 @@ descripción pokemon
 nombre pokemon
 número pokemon
 mejorar estilo
-
-extra
-algúna animación más
