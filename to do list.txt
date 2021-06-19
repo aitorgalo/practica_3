@@ -1,4 +1,3 @@
 descripción pokemon
-nombre pokemon
 pagina inicial
 mejorar estilo list 

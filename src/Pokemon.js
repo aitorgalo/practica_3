@@ -10,7 +10,7 @@ const Pokemon = () => {
     front:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
     back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
-    name: "",
+    name: ""
   });
 
   // Current Location
@@ -18,6 +18,7 @@ const Pokemon = () => {
 
   // Change Location = Change Pokemon
   useEffect(() => {
+
     // Get Pokemon Selected Info Function
     const fetchPokemonInfo = async () => {
       // Get Pokemon
@@ -36,15 +37,37 @@ const Pokemon = () => {
           .catch((err) => console.log("El Pokemon no existe"));
     };
 
+// Get Pokemon Selected Description Function
+const fetchPokemonDescriptionInfo = async () => {
+    // Get Pokemon
+    if (location.pathname !== "/")
+      await fetch("https://pokeapi.co/api/v2" + location.pathname.replace("/pokemon","/pokemon-species"))
+        .then((response) => response.json())
+        .then((json) =>
+        
+     //   setCurrentPokemon( ...currentPokemon)
+//console.log(json)
+
+setCurrentPokemon(currentPokemon)
+
+
+        )
+        .catch((err) => console.log(err));
+  };
+    
     // Get Selected Pokemon
     fetchPokemonInfo();
+    // Get Selected Pokemon Data
+    fetchPokemonDescriptionInfo();
+
+
   }, [location.pathname]);
 
   // Return Images
   return (
     <div className="pokedexLayout">
       <div className="pokemonName">{currentPokemon.name.toUpperCase()}</div>
-      <div className="pokemonDescription"></div>
+      <div className="pokemonDescription">{currentPokemon.description}</div>
       <img className="artwork" alt="" src={currentPokemon.artwork} />
       <img className="front" alt="" src={currentPokemon.front} />
       <img className="back" alt="" src={currentPokemon.back} />
