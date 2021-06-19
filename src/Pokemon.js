@@ -10,7 +10,7 @@ const Pokemon = () => {
     front:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
     back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
-    name: ""
+    name: "",
   });
 
   // Current Location
@@ -18,7 +18,6 @@ const Pokemon = () => {
 
   // Change Location = Change Pokemon
   useEffect(() => {
-
     // Get Pokemon Selected Info Function
     const fetchPokemonInfo = async () => {
       // Get Pokemon
@@ -34,33 +33,31 @@ const Pokemon = () => {
               name: json.name,
             })
           )
-          .catch((err) => console.log("El Pokemon no existe"));
+          .catch((err) => console.log("Error:" + err));
     };
 
-// Get Pokemon Selected Description Function
-const fetchPokemonDescriptionInfo = async () => {
-    // Get Pokemon
-    if (location.pathname !== "/")
-      await fetch("https://pokeapi.co/api/v2" + location.pathname.replace("/pokemon","/pokemon-species"))
-        .then((response) => response.json())
-        .then((json) =>
-        
-     //   setCurrentPokemon( ...currentPokemon)
-//console.log(json)
-
-setCurrentPokemon(currentPokemon)
-
-
+    // Get Pokemon Selected Description Function
+    const fetchPokemonDescriptionInfo = async () => {
+      // Get Pokemon
+      if (location.pathname !== "/")
+        await fetch(
+          "https://pokeapi.co/api/v2" +
+            location.pathname.replace("/pokemon", "/pokemon-species")
         )
-        .catch((err) => console.log(err));
-  };
-    
+          .then((response) => response.json())
+          .then((json) =>
+            //   setCurrentPokemon( ...currentPokemon)
+            //console.log(json)
+
+            setCurrentPokemon(currentPokemon)
+          )
+          .catch((err) => console.log("Error:" + err));
+    };
+
     // Get Selected Pokemon
     fetchPokemonInfo();
     // Get Selected Pokemon Data
     fetchPokemonDescriptionInfo();
-
-
   }, [location.pathname]);
 
   // Return Images
