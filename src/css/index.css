@@ -6,7 +6,7 @@ body {
   align-items: center;
   min-height: 95vh;
 
-  /* Anumation */
+  /* Animation */
   animation-name: background-loop;
   animation-timing-function: linear;
   animation-duration: 15s;

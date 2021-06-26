@@ -11,6 +11,7 @@ const Pokemon = () => {
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
     back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
     name: "",
+    description: "Escoge el Pokémon a analizar en el menú de abajo",
   });
 
   // Current Location
@@ -22,42 +23,43 @@ const Pokemon = () => {
     const fetchPokemonInfo = async () => {
       // Get Pokemon
       if (location.pathname !== "/")
-        await fetch("https://pokeapi.co/api/v2" + location.pathname)
-          .then((response) => response.json())
-          .then((json) =>
+        // Información extraída de https://gomakethings.com/waiting-for-multiple-all-api-responses-to-complete-with-the-vanilla-js-promise.all-method/
+        await Promise.all([
+          fetch("https://pokeapi.co/api/v2" + location.pathname),
+          fetch(
+            "https://pokeapi.co/api/v2" +
+              location.pathname.replace("/pokemon/", "/pokemon-species/")
+          ),
+        ])
+          .then(function (responses) {
+            // Get a JSON object from each of the responses
+            return Promise.all(
+              responses.map(function (response) {
+                return response.json();
+              })
+            );
+          })
+          .then(function (data) {
+
             // Set Pokemon
             setCurrentPokemon({
-              artwork: json.sprites.other.dream_world.front_default,
-              front: json.sprites.front_default,
-              back: json.sprites.back_default,
-              name: json.name,
-            })
-          )
-          .catch((err) => console.log("Error:" + err));
-    };
-
-    // Get Pokemon Selected Description Function
-    const fetchPokemonDescriptionInfo = async () => {
-      // Get Pokemon
-      if (location.pathname !== "/")
-        await fetch(
-          "https://pokeapi.co/api/v2" +
-            location.pathname.replace("/pokemon", "/pokemon-species")
-        )
-          .then((response) => response.json())
-          .then((json) =>  
-            //   setCurrentPokemon( ...currentPokemon)
-            console.log(json)
-//console.log(json)
-         // setCurrentPokemon(currentPokemon)
-          )
-          .catch((err) => console.log("Error:" + err));
+              artwork: data[0].sprites.other.dream_world.front_default,
+              front: data[0].sprites.front_default,
+              back: data[0].sprites.back_default,
+              name: data[0].name,
+              description: data[1].flavor_text_entries.filter(
+                (entry) => entry.language.name === "es"
+              )[0].flavor_text,
+            });
+          })
+          .catch(function (error) {
+            // if there's an error, log it
+            console.log(error);
+          });
     };
 
     // Get Selected Pokemon
     fetchPokemonInfo();
-    // Get Selected Pokemon Data
-    fetchPokemonDescriptionInfo();
   }, [location.pathname]);
 
   // Return Images
