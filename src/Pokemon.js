@@ -40,7 +40,6 @@ const Pokemon = () => {
             );
           })
           .then(function (data) {
-
             // Set Pokemon
             setCurrentPokemon({
               artwork: data[0].sprites.other.dream_world.front_default,

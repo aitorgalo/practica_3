@@ -5,7 +5,7 @@ const PokemonList = () => {
   const [pokemonArray, setPokemons] = useState({ results: [] });
   useEffect(() => {
     const fetchPokemonList = async () => {
-      await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+      await fetch("https://pokeapi.co/api/v2/pokemon?limit=250")
         .then((response) => response.json())
         .then((json) => setPokemons(json));
     };
@@ -18,6 +18,7 @@ const PokemonList = () => {
         <li key={item.name}>
           {" "}
           <NavLink
+            style={{ color: "black", textDecoration: "none" }}
             activeStyle={{ backgroundColor: "green" }}
             to={"/pokemon/" + item.name}
           >
