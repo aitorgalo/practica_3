@@ -11,7 +11,7 @@ const Pokemon = () => {
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
     back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
     name: "",
-    description: "Escoge el Pokémon a analizar en el menú de abajo",
+    description: "Escoge el Pokémon a analizar en el menú de abajo.",
   });
 
   // Current Location

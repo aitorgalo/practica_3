@@ -131,14 +131,20 @@ a {
   background-color: rgb(53, 135, 202);
   position: absolute;
   color:white;
-  width: 430px;
-  height: 120px;
+  width: 420px;
+  height: 100px;
   margin-left: 700px;
   margin-top: 410px;
   border-radius: 10px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
     /* Font */
 font-family: "Lucida Console", "Courier New", monospace;
-font-size: 24px;
+font-size: 22px;
+text-align: justify;
 
 }
