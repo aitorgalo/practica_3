@@ -19,7 +19,7 @@ const PokemonList = () => {
           {" "}
           <NavLink
             style={{ color: "black", textDecoration: "none" }}
-            activeStyle={{ backgroundColor: "green" }}
+            activeStyle={{ color:"white" , backgroundColor: "rgb(53, 135, 202)" }}
             to={"/pokemon/" + item.name}
           >
             {item.name.toUpperCase()}
